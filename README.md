@@ -151,3 +151,10 @@ curl -s localhost:8000/api/decide -H 'content-type: application/json' -d '{
 * 模型：[convaiinnovations/laya-multilingual](https://www.modelscope.cn/models/convaiinnovations/laya-multilingual) · Apache 2.0 · Convai Innovations
 * 库：`pip install laya` · 文档 https://nandhakishorm.github.io/laya/ · 官方演示 https://huggingface.co/spaces/convaiinnovations/laya-demo
 * 本平台代码同样以 Apache 2.0 发布。
+
+## 九、Star History
+
+如果这个项目对你有帮助，欢迎点个 Star ⭐
+
+[![Star History Chart](https://api.star-history.com/svg?repos=chenking2020/general-decision-with-laya&type=Date)](https://www.star-history.com/#chenking2020/general-decision-with-laya&Date)
+

@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+
+node_modules/
+web/dist/
+server/data/
+*.log
+
+# 模型权重目录：体积大（约 640MB），不入库
+# 需要时按 README 用 modelscope / huggingface 下载到 weights/
+weights/*/

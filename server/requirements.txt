@@ -1,0 +1,9 @@
+# Decidra · 通用决策平台 —— 后端依赖
+# Python >= 3.10（laya 要求 3.10+）
+fastapi>=0.110
+uvicorn[standard]>=0.27
+pydantic>=2.5
+python-multipart>=0.0.9
+
+# Laya 多语言决策引擎（含 serve 额外依赖）
+laya[serve]>=0.3.20

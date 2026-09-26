@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-ink-950 text-slate-200 antialiased;
+  background-image:
+    radial-gradient(1200px 600px at 12% -10%, rgba(8, 145, 178, 0.10), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(79, 70, 229, 0.07), transparent 55%),
+    linear-gradient(180deg, #fbfcfe 0%, #f2f6fa 45%, #fbfcfe 100%);
+  background-attachment: fixed;
+}
+
+/* 细网格背景，营造“控制台”质感 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(to right, rgba(15, 23, 42, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(1000px 700px at 50% 0%, black, transparent 85%);
+}
+
+@layer components {
+  .panel {
+    @apply relative rounded-2xl border border-ink-600 bg-white shadow-panel;
+  }
+  .panel-hover {
+    @apply transition-colors duration-200 hover:border-accent/40 hover:shadow-glow;
+  }
+  .panel-pad {
+    @apply p-5;
+  }
+  .section-title {
+    @apply text-[11px] font-medium uppercase tracking-[0.18em] text-slate-500;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-lg border border-ink-600 bg-white
+      px-3 py-1.5 text-[13px] font-medium text-slate-300 transition
+      hover:border-ink-500 hover:bg-ink-800 hover:text-slate-50
+      disabled:cursor-not-allowed disabled:opacity-40;
+  }
+  .btn-primary {
+    @apply border-accent/40 bg-accent/10 text-accent-soft hover:border-accent/60 hover:bg-accent/20;
+  }
+  .btn-danger {
+    @apply border-rose-500/40 bg-rose-500/10 text-rose-700 hover:border-rose-500/60 hover:bg-rose-500/15;
+  }
+  .btn-sm {
+    @apply px-2 py-1 text-[12px];
+  }
+  .input {
+    @apply w-full rounded-lg border border-ink-600 bg-white px-3 py-2 text-[13px] text-slate-100
+      placeholder:text-slate-600 outline-none transition
+      focus:border-accent/50 focus:ring-2 focus:ring-accent/20;
+  }
+  .textarea {
+    @apply input min-h-[110px] resize-y font-mono text-[12.5px] leading-relaxed;
+  }
+  .select {
+    @apply input cursor-pointer pr-8;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border border-ink-600 bg-ink-800
+      px-2 py-[3px] text-[11px] font-medium text-slate-400;
+  }
+  .chip-act {
+    @apply border-emerald-500/40 bg-emerald-500/10 text-emerald-700;
+  }
+  .chip-escalate {
+    @apply border-amber-500/40 bg-amber-500/10 text-amber-700;
+  }
+  .chip-review {
+    @apply border-sky-500/40 bg-sky-500/10 text-sky-700;
+  }
+  .chip-accent {
+    @apply border-accent/40 bg-accent/10 text-accent-soft;
+  }
+  .label {
+    @apply mb-1.5 block text-[11px] font-medium uppercase tracking-[0.14em] text-slate-500;
+  }
+  .num {
+    @apply font-mono tabular-nums;
+  }
+  .link {
+    @apply text-accent-soft underline-offset-4 hover:underline;
+  }
+  .divider {
+    @apply my-4 h-px w-full bg-ink-600;
+  }
+  .scroll-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(15, 23, 42, 0.18) transparent;
+  }
+  .scroll-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scroll-thin::-webkit-scrollbar-thumb {
+    background: rgba(15, 23, 42, 0.16);
+    border-radius: 8px;
+  }
+}
+
+/* 概率条 */
+.prob-track {
+  @apply h-1.5 w-full overflow-hidden rounded-full bg-ink-700;
+}
+.prob-fill {
+  @apply h-full rounded-full transition-[width] duration-500;
+}
